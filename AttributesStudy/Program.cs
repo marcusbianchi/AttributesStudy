@@ -15,14 +15,7 @@ namespace AttributesStudy
             };
 
             var contactWriter = new ContactConsoleWriter(contact);
-
             contactWriter.Write();
-
-            var teste = "11988318668";
-            Console.WriteLine(teste.Substring(0, 2));
-            Console.WriteLine(teste.Substring(2));
-
-
             ReadLine();
 
         }
