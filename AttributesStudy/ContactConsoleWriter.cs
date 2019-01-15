@@ -10,6 +10,7 @@ namespace AttributesStudy
         {
             _contact = contact;
         }
+        [Obsolete("This will be removed in next version")]
         public void Write() {
             WriteFirstName();
             WriteFirstAge();
