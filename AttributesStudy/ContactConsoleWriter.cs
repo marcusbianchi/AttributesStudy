@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using static System.Console;
 
 namespace AttributesStudy
@@ -10,7 +11,8 @@ namespace AttributesStudy
         {
             _contact = contact;
         }
-        [Obsolete("This will be removed in next version")]
+
+        //[Obsolete("This will be removed in next version",true)]
         public void Write() {
             WriteFirstName();
             WriteFirstAge();
@@ -23,7 +25,21 @@ namespace AttributesStudy
 
         private void WriteFirstName()
         {
+            OutputDebugInfo();
+            OutputDebugExtra();
             WriteLine(_contact.AgeInYears);
+        }
+
+        [Conditional("EXTRA")]
+        private void OutputDebugExtra()
+        {
+            WriteLine("****EXTRA INFO****");
+        }
+
+        [Conditional("DEBUG")]
+        private void OutputDebugInfo()
+        {
+            WriteLine("****DEBUG MODE****");
         }
     }
 }
